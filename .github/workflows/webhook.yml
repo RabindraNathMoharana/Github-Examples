@@ -1,0 +1,11 @@
+name: workflow on repository dispatch
+on: 
+  repository_dispatch:
+    types:
+      - webhook
+jobs:
+  respond-to-dispatch:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: run a script
+        run: 'echo "Event of type ${GITHUB_EVENT_NAME}"'
